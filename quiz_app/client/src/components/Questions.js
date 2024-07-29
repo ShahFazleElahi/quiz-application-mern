@@ -15,12 +15,12 @@ export default function Question() {
 
     function onSelect(){
 
-        console.log('radio button change')
+        // console.log('radio button change')
     }
 
     return(
         <div className="questions">
-            <h2 className="text-light">simple questions 1</h2>
+            <h2 className="text-light">{question.question}</h2>
 
             <ul key={question.id}>
                 {
@@ -30,12 +30,12 @@ export default function Question() {
                                 type="radio"
                                 value={false}
                                 name="options"
-                                id={'q1-option'}
+                                id={`q${i}-option`}
                                 onChange={onSelect()}
                             />
 
-                            <label className='text-primary' htmlFor={`q1-option`}> option </label>
-                            <div className='check checked' ></div>
+                            <label className='text-primary' htmlFor={`q${i}-option`}> {q} </label>
+                            <div className='check ' ></div>
                         </li>
                         
                     ))

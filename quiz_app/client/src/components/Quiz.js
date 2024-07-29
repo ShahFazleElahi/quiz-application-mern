@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Question from './Questions';
 
+/* redux store import */
+import { useSelector } from 'react-redux'
+
+
 export default function Quiz() {
+
+    const question = useSelector(state => state)
+    
+    useEffect(() => {
+        console.log(question.queue)
+    })
 
     /* Next button event handler */
     function onNext(){
